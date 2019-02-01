@@ -39,10 +39,10 @@ function requestHandler(req, res)
     var comb = word1.concat(word2);
     var Len = comb.length;
     //var Len2=word2.length;
-   if(Len <= 30)
+   var x = '';
+    for (var i = 0; i < (30 - (word1.length + word2.length)); i++)
     {
-      var x =".";
-      
+    x = x + '.';
     }
     res.write('<pre>'+word1+x+word2+'</pre>');
       res.end('');    
