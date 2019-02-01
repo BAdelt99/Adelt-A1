@@ -28,13 +28,28 @@ function requestHandler(req, res)
         i = word.length/len;
       res.write('<pre>' + word.repeat(i) + "<br>" + '</pre>');
       }
-      //var word = query["word"];
-      //var i = word.length;
-      //res.write('<pre>'+ word.repeat(i) + '</pre>');
       res.end(' ');
+    }
+    if(query['cmd'] == 'dotted' )
+    {
+    console.log("Handling a request");
+    console.log(query);
+    var word1 = query["word1"];
+    var word2 = query["word2"];
+    var comb = word1.concat(word2);
+    var Len = comb.length;
+    //var Len2=word2.length;
+   // if(Len >= 30)
+    //{
+      
+    //}
+    //res.write('<p>'+comb+'</p>');
+    //  res.end('');    
+      
     }
     else
     {
       res.end('');
     }
+
 }
