@@ -16,18 +16,22 @@ function requestHandler(req, res)
     
     res.writeHead(200, {'Content-Type': 'text/html'});
     
-    if (query['cmd'] == 'add')
+    if (query['cmd'] == 'repeat')
     {
       console.log("Handling a request");
       console.log(query);
-      var sum = 0;
-      for (var i in query['num'])
+      var word = query["word"];
+      var i;
+      var len = word.length;
+      for (i in word) 
       {
-        sum = sum + parseInt(query['num'][i]);
+        i = word.length/len;
+      res.write('<pre>' + word.repeat(i) + "<br>" + '</pre>');
       }
-      
-      res.write('<pre>'+sum+'</pre>');
-      res.end('');
+      //var word = query["word"];
+      //var i = word.length;
+      //res.write('<pre>'+ word.repeat(i) + '</pre>');
+      res.end(' ');
     }
     else
     {
